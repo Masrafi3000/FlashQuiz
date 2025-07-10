@@ -1,0 +1,70 @@
+.login-card-backdrop {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at center, #121212 0%, #000000 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-card {
+  background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+  border: 2px solid #ff4d4d;
+  box-shadow: 0 0 20px #66000099;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  color: #ffaa33;
+  font-family: 'Cardo', serif;
+}
+
+.login-card h2 {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+.login-card input {
+  display: block;
+  width: 100%;
+  margin: 12px 0;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #444;
+  border-radius: 8px;
+  background-color: #000;
+  color: #fff;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 12px;
+  background: #ffaa33;
+  color: #000;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.login-card button:hover {
+  background: #ffcc66;
+}
+
+.toggle-auth {
+  margin-top: 16px;
+  color: #999;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+.error {
+  color: #ff4d4d;
+  margin-top: 10px;
+  font-weight: bold;
+}

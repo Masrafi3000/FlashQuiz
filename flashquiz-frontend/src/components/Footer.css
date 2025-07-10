@@ -1,0 +1,21 @@
+.footer {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.95rem;
+  border-top: 2px solid #ff4d4d;
+  margin-top: 40px;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.footer em {
+  color: #ffaa33;
+  font-style: normal;
+  font-weight: bold;
+}

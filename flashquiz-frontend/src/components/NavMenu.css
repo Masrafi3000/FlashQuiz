@@ -1,0 +1,83 @@
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  color: white;
+  padding: 12px 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.nav-left .hamburger {
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-right a {
+  color: #ff4d4d;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.theme-toggle {
+  font-size: 1.1rem;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar-wrapper {
+  display: flex;
+  transition: transform 0.4s ease;
+  transform: translateX(-100%);
+  position: absolute;
+  top: 58px; /* height of navbar */
+  left: 0;
+  width: 100%;
+}
+
+.sidebar-wrapper.open {
+  transform: translateX(0);
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #1f1f1f;
+  color: #eee;
+  padding: 30px 20px;
+  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.4);
+  height: calc(100vh - 58px);
+}
+
+.sidebar h2 {
+  margin-bottom: 16px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+.content-area {
+  transition: margin-left 0.4s ease;
+  padding: 40px;
+}
+
+.content-area.shifted {
+  margin-left: 260px; /* same as sidebar width */
+}

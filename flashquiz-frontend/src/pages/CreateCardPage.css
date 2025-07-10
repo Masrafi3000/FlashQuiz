@@ -1,0 +1,392 @@
+/* Base Styles */
+:root {
+  --primary-color: #3050ff;
+  --secondary-color: #10b981;
+  --danger-color: #ef4444;
+  --border-color: #2d3748;
+  --text-color: #f0f0f0;
+  --bg-color: #0f0f0f;
+  --card-bg: #1a1a1a;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text-color);
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: gray;
+}
+
+.mode-toggle {
+  display: flex;
+  gap: 1rem;
+}
+
+.mode-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #222;
+  border: none;
+  color: #ccc;
+  padding: 8px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.mode-btn:hover {
+  background: #444;
+  color: white;
+}
+
+.flashcard-management {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.flashcard-management h2 {
+  margin-top: 1.5rem;
+  color: #ddd;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+textarea,
+.answer-input {
+  width: 100%;
+  background-color: var(--card-bg);
+  color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 8px;
+  resize: vertical;
+  font-size: 1rem;
+}
+
+.management-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.danger-btn,
+.check-answer-btn,
+.file-import-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: #506bff;
+}
+
+.danger-btn {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.danger-btn:hover {
+  background-color: #b3002d;
+}
+
+.success-feedback {
+  background-color: var(--secondary-color) !important;
+}
+
+.check-answer-btn {
+  background-color: var(--secondary-color);
+  color: white;
+  margin-top: 10px;
+}
+
+.check-answer-btn:hover {
+  background-color: #00a07d;
+}
+
+.file-import-btn {
+  background-color: #6b46c1;
+  color: white;
+  position: relative;
+}
+
+.file-import-btn:hover {
+  background-color: #553c9a;
+}
+
+.stats {
+  margin-bottom: 1.5rem;
+}
+
+/* Card List Styles */
+.card-list {
+  margin-top: 30px;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+#noCardsMessage {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}
+
+.card-item {
+  padding: 12px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-item:last-child {
+  border-bottom: none;
+}
+
+.card-content {
+  flex-grow: 1;
+  line-height: 1.5;
+}
+
+.card-actions {
+  margin-left: 15px;
+}
+
+.delete-card-btn {
+  background: none;
+  border: none;
+  color: var(--danger-color);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.delete-card-btn:hover {
+  color: #ff0000;
+}
+
+/* Test Section Styles */
+.test-section {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.test-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.flashcard {
+  width: 100%;
+  height: 200px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--card-bg);
+}
+
+.flashcard-back {
+  transform: rotateY(180deg);
+}
+
+.flashcard-content {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Result Message Styles */
+.result-message {
+  margin-top: 10px;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 8px;
+  display: block;
+}
+
+.correct {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: var(--secondary-color);
+}
+
+.incorrect {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: var(--danger-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1.5rem;
+  }
+  
+  .management-buttons {
+    flex-direction: column;
+  }
+  
+  .primary-btn,
+  .danger-btn,
+  .check-answer-btn,
+  .file-import-btn {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .mode-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+}
+/* Image Upload Styles */
+.image-upload-container {
+  margin-top: 10px;
+}
+
+.image-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #4a5568;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.image-upload-btn:hover {
+  background-color: #2d3748;
+}
+
+.image-preview-container {
+  position: relative;
+  margin-top: 10px;
+  max-width: 100%;
+}
+
+.image-preview {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.clear-image-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: rgba(239, 68, 68, 0.7);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.clear-image-btn:hover {
+  background-color: var(--danger-color);
+}
+
+/* Card Thumbnail Styles */
+.card-thumbnail {
+  max-width: 100px;
+  max-height: 60px;
+  vertical-align: middle;
+  margin-left: 5px;
+  border-radius: 4px;
+}
+
+/* Test Image Styles */
+.test-image {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 4px;
+}
